@@ -1,0 +1,20 @@
+<div class="main-screen-big-container">
+    <div class="main-screen-container">
+        <div class="main-screen-sidebar">
+            <ul class="main-screen-sidebar-items">
+                <li> <p (click)=(getWorkers())>View all employees</p> </li>
+                <li> <p (click)=(getTasks())>View all tasks</p> </li>
+                <li> <p (click)=(navigateCreateTask())>Create task</p> </li>
+                <li> <p class="main-screen-logout" (click)=(logout())> Logout </p></li>
+            </ul>
+        </div>
+    
+        <div class="main-screen-content">
+            <h2 class="main-screen-content-heading">{{current_page}}</h2>
+                <div *ngIf='workers'>
+                    <app-employee-list *ngIf="tabIndex === 0" [data]="workers"></app-employee-list>
+                    <app-task-list *ngIf="tabIndex === 1" [data]="tasks"></app-task-list>
+                </div>
+        </div>
+    </div>    
+</div>

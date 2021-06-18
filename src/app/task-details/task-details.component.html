@@ -1,0 +1,46 @@
+
+<div class="main-screen-big-container">
+    <div class="main-screen-container">
+        <div class="main-screen-sidebar">
+            <ul class="main-screen-sidebar-items">
+            </ul>
+        </div>
+    
+        <div *ngIf="dataHere" class="main-screen-content">
+            <h2 class="main-screen-content-heading">{{userData.title}} Details</h2>
+            <p>Title: {{userData.title}}</p>
+            <p>Description: {{userData.desc}}</p>
+            <p>Time to Complete: {{userData.time_to_complete}}</p>
+            <p>Assigned by: {{userData.manager.first_name}}</p>
+            <p *ngIf="userData.worker">Worked on by: <a href="/manager/dashboard/worker/{{userData.worker._id}}">{{userData.worker.first_name}}</a></p>
+            <div *ngIf="userData.answer">
+                <p class="solved">SOLVED</p>
+                <p>Solution link: {{userData.answer}}</p>
+                
+                <div *ngIf="userData.status">
+                    <p>Points: {{userData.points}}</p>
+                    <p>Status: {{userData.status}}</p>
+                </div>
+                
+                <div *ngIf="!userData.status" class="manager-input">
+                    <label for="status">Apporved/Rejected: </label>
+                    <input type="text" name="status" id="status">
+
+                    <label for="points">Points: </label>
+                    <input type="number" name="points" id="points">
+
+                    <button type="submit-manager" (click)="checkTask()">Submit</button>
+                </div>
+
+            </div>
+            <div *ngIf="!userData.answer">
+                <p class="not-solved">Not Solved</p>
+            </div>
+
+            <button class='back'><a href="manager/dashboard">Back</a></button>
+            <button  class="delete" (click)="deleteTask()">Delete</button>
+        </div>
+
+        
+    </div>    
+</div>

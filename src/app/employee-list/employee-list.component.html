@@ -1,0 +1,15 @@
+<div class="big-container">
+    <div class="container" *ngIf="data"> 
+        <ul *ngFor="let e of data | paginate: { itemsPerPage: count, currentPage: p }"  class="list-item">
+            <li>{{e.first_name}}</li>
+            <li>{{e.last_name}}</li>
+            <li>{{e.email}}</li>
+            <li><button><a href="manager/dashboard/worker/{{e._id}}">View details</a></button></li>
+        </ul>
+        
+    </div>
+    
+    <div class="text-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

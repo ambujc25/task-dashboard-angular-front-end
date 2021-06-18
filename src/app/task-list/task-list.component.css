@@ -1,0 +1,44 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-item{
+    background-color: rgb(122, 122, 122);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 90%;
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.list-item:hover{
+    transform: scale(1.01);
+}
+
+.list-item li{
+    padding: 5px;
+    background-color: grey;
+}
+
+button{
+    border: none;
+    padding: 4px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button a{
+    text-decoration: none;
+}
+
+table{
+    border: none;
+}

@@ -1,0 +1,62 @@
+h1 {
+    color: #DADFF7;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;    
+}
+
+.main_title{
+  display: flex;
+  justify-content: center;
+  background-color: #1A3891;
+}
+
+.big-login-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.employee-login{
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.login-container{
+    background-color: rgb(240, 240, 240);
+    width: 220px;
+    height: 190px;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container-heading{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form input{
+    margin-bottom: 20px;
+}
+
+.login-form button{
+    margin-bottom: 10px;
+}
+
+.extra-options{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}

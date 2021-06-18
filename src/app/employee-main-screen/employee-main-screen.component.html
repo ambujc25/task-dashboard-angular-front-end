@@ -1,0 +1,18 @@
+<div class="main-screen-big-container">
+    <div class="main-screen-container">
+        
+        <div class="main-screen-sidebar">
+            <ul class="main-screen-sidebar-items">
+                <li> <p (click)=(getTasks())>View all Tasks</p> </li>
+                <li> <p (click)=(getProfile())><a href="/employee/dashboard/worker/{{workerId}}">Profile</a></p> </li> 
+                <li> <p class="main-screen-logout" (click)=(logout())> Logout </p></li>
+            </ul>
+        </div>
+    
+        <div class="main-screen-content">
+            <h2 class="main-screen-content-heading"></h2>            
+            <app-task-list-employee *ngIf="tabIndex === 1" [data]="tasks"></app-task-list-employee>
+        </div>
+
+    </div>    
+</div>

@@ -1,0 +1,45 @@
+
+<div class="main-screen-big-container">
+    <div class="main-screen-container">
+        <div class="main-screen-sidebar">
+            <ul class="main-screen-sidebar-items">
+            </ul>
+        </div>
+    
+        <div *ngIf="dataHere" class="main-screen-content">
+            <h2 class="main-screen-content-heading">{{userData.title}} Details</h2>
+            <p>Title: {{userData.title}}</p>
+            <p>Description: {{userData.desc}}</p>
+            <p>Time to Complete: {{userData.time_to_complete}}</p>
+            <p>Assigned by: <a href="">{{userData.manager.first_name}}</a></p>
+            <p *ngIf="userData.worker">Worked on by: <a href="employee/dashboard/worker/{{userData.worker._id}}">{{userData.worker.first_name}}</a></p>
+            <div *ngIf="userData.answer">
+                <p class="solved">SOLVED</p>
+                <p>Solution link: {{userData.answer}}</p>
+                <p>Points: {{userData.points}}</p>
+                <p>Status: {{userData.status}}</p>
+            </div>
+
+            <div *ngIf="!userData.answer">
+                <p class="not-solved">Not Solved</p>
+            </div>
+
+            <div *ngIf = "userData.worker">
+                <div *ngIf="currentId === userData.worker._id && !userData.answer" class="get-answer">
+                    <label for="solution">Enter solution link: </label>
+                    <input type="text" name="solution" id="solution">
+                </div>
+            </div>
+
+            <button><a href="employee/dashboard">Back</a></button>
+    
+            <button *ngIf="!userData.worker" class='solved' (click)="selectTask()">Select Task</button>
+
+            <button *ngIf="userData.worker && currentId === userData.worker._id && !userData.answer" (click)="addAnswer()">Submit</button>
+
+            
+        </div>
+
+        
+    </div>    
+</div>

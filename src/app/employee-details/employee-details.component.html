@@ -1,0 +1,32 @@
+
+<div class="main-screen-big-container">
+    <div class="main-screen-container">
+        <div class="main-screen-sidebar">
+            <ul class="main-screen-sidebar-items">
+            </ul>
+        </div>
+    
+        <div *ngIf="dataHere" class="main-screen-content">
+            <h2 class="main-screen-content-heading">{{userData.first_name}} Profile</h2>
+            <p>First Name: {{userData.first_name}}</p>
+            <p>Last Name: {{userData.last_name}}</p>
+            <p>Email: {{userData.email}}</p>
+
+            <p>Tasks: </p>
+            <ul *ngFor="let e of userData.tasks_doing | paginate: { itemsPerPage: count, currentPage: p }"  class="list-item">
+                <li><a href="manager/dashboard/task/{{e._id}}">{{e.title}}</a></li>
+            </ul>
+
+            <div class="text-right pages">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+
+        
+            <button><a href="manager/dashboard">Back</a></button>
+        </div>
+
+        
+
+        
+    </div>    
+</div>
