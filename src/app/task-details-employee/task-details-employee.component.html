@@ -11,7 +11,7 @@
             <p>Title: {{userData.title}}</p>
             <p>Description: {{userData.desc}}</p>
             <p>Time to Complete: {{userData.time_to_complete}}</p>
-            <p>Assigned by: <a href="">{{userData.manager.first_name}}</a></p>
+            <p>Assigned by: {{userData.manager.first_name}}</p>
             <p *ngIf="userData.worker">Worked on by: <a href="employee/dashboard/worker/{{userData.worker._id}}">{{userData.worker.first_name}}</a></p>
             <div *ngIf="userData.answer">
                 <p class="solved">SOLVED</p>
